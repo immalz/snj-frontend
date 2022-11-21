@@ -1,0 +1,57 @@
+.page {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+
+    .page__title {
+        font-weight: 600;
+        font-size: 30px;
+        padding-top: 40px;
+        opacity: 0.5;
+    }
+
+    h2 {
+        opacity: 0.5;
+    }
+
+    .page__cards {
+        width: 100%;
+        height: calc(100% - 250px);
+        overflow-y: scroll;
+
+        .header {
+            display: flex;
+        }
+
+        .card {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+            gap: 20px;
+            .example-full-width {
+                width: 50px;
+            }
+        }
+    }
+
+    .page__buttons {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            background: var(--background-color);
+            color: #fff;
+        }
+    }
+
+    .page__cards::-webkit-scrollbar {
+        width: 0;
+    }
+
+
+
+}

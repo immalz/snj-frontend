@@ -1,0 +1,22 @@
+<div class="sidebar">
+    <div class="sidebar__top">
+        <img src="assets/imagenes/snj.png" alt="">
+        <h1>Sagrados Niños de Jesús</h1>
+    </div>
+    <div class="sidebar__content">
+        <div 
+            class="sidebar__content--item"
+            [ngClass]="{'active': menu.active}"
+            *ngFor="let menu of menuList"
+            (click)="navigate(menu)"
+        >
+            <mat-icon>{{menu.icon}}</mat-icon>
+            <p> {{menu.title}} </p>
+        </div>
+    </div>
+    <div class="sidebar__bottom" (click)="logout()">
+        <button mat-button>
+            Cerrar Sesión
+        </button>
+    </div>
+</div>

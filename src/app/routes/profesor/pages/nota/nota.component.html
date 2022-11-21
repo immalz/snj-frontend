@@ -1,0 +1,59 @@
+<ng-container *ngIf="mode === 'aulas'">
+    <div class="page">
+
+        <h1 class="page__title">Aulas Disponibles</h1>
+
+        <div class="page__cards">
+            <h2><b>Nivel:</b> Inicial</h2>
+            <div class="list">
+                <ng-container *ngFor="let item of gradeList">
+                    <div class="page__cards--card" (click)="selectGrade(item)" *ngIf="item.nivel === 'inicial'">
+                        <mat-icon>child_care</mat-icon>
+                        <h5>{{item.nombre}}</h5>
+                        <h4>{{item.nombre}}</h4>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="page__cards">
+            <h2><b>Nivel:</b> Primaria</h2>
+            <div class="list">
+                <ng-container *ngFor="let item of gradeList">
+                    <div class="page__cards--card" (click)="selectGrade(item)" *ngIf="item.nivel === 'primaria'">
+                        <mat-icon>school</mat-icon>
+                        <h5>{{item.nombre}}</h5>
+                        <h4>{{item.nombre}}</h4>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="mode === 'aula'">
+    <ng-container *ngIf="loading">
+        <div class="loading">
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </ng-container>
+
+    <ngcontainer *ngIf="!loading">
+       <div class="page">
+            <h1 class="page__title">Aulas Disponibles</h1>
+
+            <div class="page__cards">
+                <h2><b>Aula:</b> Inicial</h2>
+                <div class="list">
+                    <ng-container *ngFor="let item of courseList">
+                        <div [class]="getColorClass(item.nombre)" class="page__cards--card" (click)="goToAssignRatings(item)">
+                            <mat-icon>school</mat-icon>
+                            <h5>{{item.nombre}}</h5>
+                            <h4>{{item.nombre}}</h4>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+       </div>
+    </ngcontainer>
+
+</ng-container>
